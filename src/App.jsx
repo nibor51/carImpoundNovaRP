@@ -1,34 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import './App.css';
+import { useData } from "./contexts/DataContext";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const data = useData();
+  const re = /(a-zA-Z])/g;
 
   return (
     <div className="App">
+      <h1>Fourrière</h1>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          Votre véhicule est il en fourrière ?
         </p>
       </div>
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        Regardez donc dans la liste ci-dessous : 
       </p>
+          <ul className="flex">
+            {Object.values(data).map((item) => (
+                <li className='card' key={item.id}>
+                  <img src={item.picture} alt={item.immat} />
+                  <h3 className='title-card'>{item.immat}</h3>
+                </li>
+            ))}
+          </ul>
     </div>
   )
-}
+};
 
-export default App
+export default App;
