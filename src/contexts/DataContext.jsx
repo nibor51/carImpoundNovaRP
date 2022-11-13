@@ -20,7 +20,7 @@ const dataContext = createContext(
 );
 
 export function DataProvider({ children }) {
-  const dataUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRh5igZ4-rIFMZkWRGGCW0RZ9qIUmY9SGsYJlLF2kmadoOWZEywEd2JEBHBVzEOKlVDwtVlMF7eB3jO/pub?gid=764959703&single=true&output=csv";
+  const dataUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRh5igZ4-rIFMZkWRGGCW0RZ9qIUmY9SGsYJlLF2kmadoOWZEywEd2JEBHBVzEOKlVDwtVlMF7eB3jO/pub?gid=325965697&single=true&output=csv";
   const data = useCSV(dataUrl);
 
   const { Provider } = dataContext;
