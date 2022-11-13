@@ -3,7 +3,6 @@ import { useData } from "./contexts/DataContext";
 
 function App() {
   const data = useData();
-  const re = /(a-zA-Z])/g;
 
   return (
     <div className="App">
@@ -18,11 +17,16 @@ function App() {
       </p>
           <ul className="flex">
             {Object.values(data).map((item) => (
+              item.impound ? 
+              (
                 <li className='card' key={item.id}>
                   <img src={item.picture} alt={item.immat} />
-                  <h3 className='title-card'>{item.immat}</h3>
+                  <h3 className='title-card'>{item.immat} {item.ownerName}</h3>
                 </li>
-            ))}
+              )
+              :
+              null
+              ))}
           </ul>
     </div>
   )
