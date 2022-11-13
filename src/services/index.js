@@ -10,10 +10,16 @@ const extract = (line) => {
         ownerName: line[3] || "null",
         impound: line[4],
     };
-    // const re = /(a-zA-Z])/g;
-    // const matchedImmat = line[1][0].match(re);
     if (!line[2].includes('http')) {
         newLine.picture = "https://" + line[2]
+    }
+    if (line[2].includes('gyazo')) {
+        newLine.picture = line[2].replace('gyazo', 'i.gyazo') + ".jpg"
+    }
+    if (line[4] === "TRUE") {
+        newLine.impound = true
+    } else {
+        newLine.impound = false
     }
     return newLine;
 };
