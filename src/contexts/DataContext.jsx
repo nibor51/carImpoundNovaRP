@@ -7,15 +7,15 @@ const dataContext = createContext(
     id: 1,
     immat: "ABC1234",
     picture: "#",
-    deposant: "null",
-    deposantName: "null",
+    ownerName: "null",
+    impound: true,
   },
   {
     id: 2,
     immat: "ABC1234",
     picture: "#",
-    deposant: "null",
-    deposantName: "null",
+    ownerName: "null",
+    impound: false,
   }]
 );
 

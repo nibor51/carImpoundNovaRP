@@ -7,6 +7,8 @@ const extract = (line) => {
         id: line[0],
         immat: line[1],
         picture: line[2] || noPicture,
+        ownerName: line[3] || "null",
+        impound: line[4],
     };
     // const re = /(a-zA-Z])/g;
     // const matchedImmat = line[1][0].match(re);
@@ -21,12 +23,16 @@ export function useCSV(url) {
         [{
             id: 1,
             immat: "ABC1234",
-            picture: "#"
+            picture: noPicture,
+            ownerName: "null",
+            impound: true,
           },
           {
             id: 2,
             immat: "ABC1234",
-            picture: "#"
+            picture: "#",
+            ownerName: "null",
+            impound: false,
           }]
     );
 
